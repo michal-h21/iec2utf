@@ -103,15 +103,15 @@ The result is now correct:
 
 You can simplify the process with some simple shell or batch scripts:
 
-- Unix:
+Unix:
 
-    #!/usr/bin/env sh
-    texlua iec2utf.lua T1 < `basename $1 .tex`.idx | texindy -i -M lang/czech/utf8-lang -o `basename $1 .tex`.ind
+     #!/usr/bin/env sh
+     texlua iec2utf.lua T1 < `basename $1 .tex`.idx | texindy -i -M lang/czech/utf8-lang -o `basename $1 .tex`.ind
 
-- Windows
+Windows:
 
-    @echo of
-    type %~n1.idx | texlua iec2utf.lua T1 | texindy -i -M lang/czech/utf8-lang -o %~n1.ind
+     @echo of
+     type %~n1.idx | texlua iec2utf.lua T1 | texindy -i -M lang/czech/utf8-lang -o %~n1.ind
 
 
 

@@ -45,7 +45,8 @@ produces this raw index file:
     \indexentry{\IeC {\'o}dy}{1}
 
 When you try to process this index file with xindy (for correct utf8 support with
-`xindy`, it is best to load language module with `-M lang/langname/utf8-lang`):
+`xindy`, it is best to load language module with `-M lang/langname/utf8-lang`,
+in this case language is `czech`):
 
     texindy -M lang/czech/utf8-lang filename.idx
 

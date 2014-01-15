@@ -22,6 +22,8 @@ if #arg > 0 then
 		local n = arg[i]
 		if n == "-L" then
 			lang = arg[i+1]
+                        arg[i] = "" 
+                        arg[i + 1] ="" 
 		elseif n == "-i" then
 			print("Input")
 			input = io.read("*all")
@@ -72,7 +74,6 @@ end
 -- io.write(output)
 local options = table.concat(xindyopt," ")
 print(options)
-local xindy = io.popen("texindy "..options)
+local xindy = assert(io.popen("texindy "..options,"w"))
 xindy:write(output)
 xindy:close()
-

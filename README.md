@@ -31,8 +31,7 @@ iec2utf.lua
 
     texlua iec2utf.lua "used fontenc" < filename > newfile
 
-You must specify font encodings used in the document, default is T1, used in
-European languages wth Latin alphabet.
+You must specify font encodings used in the document, default is `T1 T2A T2B T2C T3 T5 LGR`, which covers European languages with Latin and Cyrrilic alphabets, and Vietnamese.
 
 ### Example
 

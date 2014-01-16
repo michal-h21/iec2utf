@@ -1,12 +1,30 @@
-iec2utf.lua
+iec2utf
 ===========
 
-This is simple script to convert files writen by LaTeX when `inputenc` package
-with `utf-8` option is used. Main purpose of this pakage is to preprocess
-index files for xindy index processor.
+This is simple convertor for files writen by LaTeX when `inputenc` package
+with `utf8` option is used. All unicode characters with character code
+greater than 127 are encoded as `\IeC{LICR code}`, this tool can translate
+them to `utf8` codes.
 
-Usage
------
+Lua library and two sample scripts are provided. 
+
+
+ieclib
+------
+
+Conversion library. 
+
+### Functions
+
+`process(string)`
+
+:		conversion function, all `\IeC` codes are translated to `utf8`.
+
+`load_enc(table with encodings)`
+
+:   conversion is based on font encodings, you must specify font encodings
+    used in the document. For each of these encodings, file `<encname>enc.dfu`
+    must exist. In these files, conversion tables are provided. 
 
     texlua iec2utf.lua "used fontenc" < filename > newfile
 

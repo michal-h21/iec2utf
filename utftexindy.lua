@@ -44,7 +44,7 @@ if not input and #arg > 0 then
 	f:close()
 	arg[#arg]=nil
 	if not outputfile then
-		outputname = filename:gsub("%..+$",".ind")
+		outputname = filename:gsub("%.[^%.]-$",".ind")
 	end
 elseif #arg == 0 then
 		print("Error: You must specify filename or use -i option for standard input")

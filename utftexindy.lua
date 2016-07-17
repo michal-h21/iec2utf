@@ -61,7 +61,15 @@ end
 -- local input = io.read("*all")
 local output = iec.process(input)
 
-local xindyopt = {"-i", "-M", "lang/"..lang.."/utf8-lang"}
+-- support language variants
+-- ie. slovak/large
+local langsep = "/"
+
+if lang:match "/" then langsep = "-" end
+
+local langmodule = "lang/"..lang.. langsep .. "utf8-lang"
+
+local xindyopt = {"-i", "-M", langmodule}
 for _, o in ipairs(arg) do
   table.insert(xindyopt,o)
 end

@@ -128,8 +128,10 @@ To simplify process described above, script `utftexindy.lua` is provided.
 `ieclib` with `T1, T2A, T2B, T2C, T3, T5` and `LGR` font encoding is loaded,
 all command line options are passed to `texindy`, with exception of the `-L` 
 option for language, which is transformed to `-M lang/<langname>/utf8-lang`.
-It is also possible to use language variants, specified after slash, like 
-`slovak/large`.
+It is also possible to use the languages with multiple alphabet rule
+variants, like `slovak-large`, `slovak-small`, `spanish-modern`,
+`spanish-traditional`, ... that are correctly transformed into
+`-M lang/<lang>/<variant>-utf8-lang`.
 
 ### Example:
 

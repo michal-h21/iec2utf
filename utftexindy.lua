@@ -61,13 +61,14 @@ end
 -- local input = io.read("*all")
 local output = iec.process(input)
 
--- support language variants
--- ie. slovak/large
+-- support languages with multiple alphabet rule variants
+-- ie. slovak-large, slovak-small, spanish-modern, spanish-traditional,... etc.
+-- see http://xindy.sourceforge.net/doc/make-rules-alphabets-doc.pdf
 local langsep = "/"
 
-if lang:match "/" then langsep = "-" end
+if lang:match "-" then langsep = "-" end
 
-local langmodule = "lang/"..lang.. langsep .. "utf8-lang"
+local langmodule = "lang/"..lang:gsub("-", "/")..langsep.."utf8-lang"
 
 local xindyopt = {"-i", "-M", langmodule}
 for _, o in ipairs(arg) do

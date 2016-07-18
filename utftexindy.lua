@@ -64,7 +64,7 @@ local output = iec.process(input)
 -- support languages with multiple alphabet rule variants
 -- ie. slovak-large, slovak-small, spanish-modern, spanish-traditional,... etc.
 -- see http://xindy.sourceforge.net/doc/make-rules-alphabets-doc.pdf
-local` langsep = "/"
+local langsep = "/"
 
 if lang:match "-" then langsep = "-" end
 

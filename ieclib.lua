@@ -34,6 +34,9 @@ local cache = {}
 
 local process = function(input)
 	local output = input:gsub('\\IeC[%s]*(%b{})',function(iec)
+    -- remove \protect commands 
+    local iec = iec:gsub("\\protect%s*", "")
+    print(iec)
 		local code = cache[iec] or licrs[sanitize_licr(iec)] or '\\IeC '..iec
 		-- print(iec, code)
 		cache[iec] = code
